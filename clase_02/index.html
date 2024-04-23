@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase 2</title>
+  </head>
+  <body>
+    <header>
+      <!-- Loguito -->
+      <img src="https://via.placeholder.com/50" alt="" />
+
+      <!-- La barra de navegacion -->
+      <nav>
+        <!-- Si esta en el mismo nivel ./ -->
+        <!-- <a href="./tablas.html">Ver las tablas</a> -->
+
+        <!-- Si esta en otra carpeta -->
+        <ul>
+          <li><a href="./pages/tablas.html">Ir a las tablas</a></li>
+          <li>
+            <a href="./pages/tablas.html">Ir a las tablas</a>
+          </li>
+          <li>
+            <a href="./pages/tablas.html">Ir a las tablas</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DEL PAGINA -->
+    <main>
+      <!-- Section 1 -->
+      <section>
+        <div>
+          <h1>Hola</h1>
+          <p>Bienvenidos a mi pagina web</p>
+          <a href="#">Contactame</a>
+        </div>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf0LuMnGHfTMV19hjWkwWApf2Whm2ulDBL8uJtq7CBcg&s"
+          alt=""
+        />
+      </section>
+      <!-- Seccion 2 -->
+      <section>
+        <h2>Mis servicios</h2>
+
+        <!-- Servicio -->
+        <article>
+          <h3>Paginas web</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
+            molestiae!
+          </p>
+          <a href="#">Ver mas</a>
+        </article>
+
+        <!-- Servicio 2 -->
+        <div>
+          <h3>SEO</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <a href="#">Ver mas</a>
+        </div>
+      </section>
+
+      <!-- Seccion 3 -->
+      <section>
+        <h2>Contacto</h2>
+        <form>
+          <div>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" placeholder="John Doe" required />
+          </div>
+
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" placeholder="email@gmail.com" id="email" />
+          </div>
+
+          <div>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" placeholder="18" min="0" max="99" />
+          </div>
+
+          <div>
+            <label for="pass">Contraseña:</label>
+            <input type="password" placeholder="password" id="pass" />
+          </div>
+
+          <div>
+            <input type="checkbox" id="terminos" required />
+            <label for="terminos"
+              >Acepto los terminos y condiciones
+              <a href="#">Ver terminos</a></label
+            >
+          </div>
+
+          <div>
+            <p>Gusto de helado favorito:</p>
+            <div>
+              <input type="radio" id="chocolate" name="gustos" />
+              <label for="chocolate">Chocolate</label>
+            </div>
+
+            <div>
+              <input type="radio" id="menta" name="gustos" />
+              <label for="menta">Menta Granizada</label>
+            </div>
+
+            <div>
+              <input type="radio" id="frutilla" name="gustos" />
+              <label for="frutilla">Frutilla</label>
+            </div>
+
+            <div>
+              <label for="juego">Jugar</label>
+              <select name="juego" id="juego">
+                <option value="piedra">Piedra</option>
+                <option value="papel">Papel</option>
+                <option value="tijera">Tijera</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="mensaje">Mensaje:</label>
+              <br />
+              <textarea
+                id="mensaje"
+                cols="30"
+                rows="10"
+                maxlength="50"
+                placeholder="Deja tu mensaje"
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="telefono">Telefono:</label>
+              <input type="tel" id="telefono" />
+            </div>
+          </div>
+
+          <!-- Botoncito -->
+          <!-- <button>Enviar</button> -->
+          <input type="submit" value="Manda el form" />
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer Pie de pagina -->
+    <footer>
+      <p>Este es mi footer</p>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Linkedin</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
