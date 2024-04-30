@@ -1,0 +1,71 @@
+.container {
+  background: #282828;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 20px 0;
+  width: fit-content;
+}
+
+/* Id */
+#selectorId {
+  color: #8c54fb;
+}
+
+/* Clase */
+.selectorClase {
+  color: #e11d48;
+}
+
+/* Etiqueta */
+h5 {
+  color: #8c54fb;
+}
+
+/* Cajas */
+.caja {
+  width: 100px;
+  height: 100px;
+  background: #8c54fb;
+}
+
+.caja-mediana {
+  width: 200px;
+  height: 200px;
+  background-color: #e11d48;
+}
+
+.caja-grande {
+  width: 300px;
+  height: 300px;
+  background: #8c54fb;
+}
+
+/* Unidades relativas */
+.small-font {
+  font-size: 10px;
+}
+
+.em {
+  font-size: 2em;
+}
+
+.rem {
+  font-size: 2rem;
+}
+
+.porcentaje {
+  background: #8c54fb;
+  width: 50%;
+  height: 50%;
+}
+
+.vh {
+  /* No esta relacionado a la caja en si, si no al viewport (ventana navegador) */
+  background: #8c54fb;
+  height: 10vh;
+}
+
+.vw {
+  background:#8c54fb;
+  width: 50vw;
+}

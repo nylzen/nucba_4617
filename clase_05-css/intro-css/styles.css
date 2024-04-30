@@ -1,0 +1,33 @@
+h1 {
+  color: #f06832;
+}
+
+body {
+  background-color: rgb(189, 247, 162);
+}
+
+/* selector universal */
+* {
+  border: 1px solid red;
+}
+
+p {
+  background: #f8df27;
+}
+
+/* selector id # */
+#titulo {
+  background: #ef8686;
+  color: white;
+}
+
+/* selector clase . */
+.p-fondo {
+  background: red;
+  color: blue;
+}
+
+/* Selector descendiente */
+div h1 {
+  background: blue;
+}
