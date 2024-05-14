@@ -12,6 +12,10 @@
     <!-- Estilos de la clase -->
     <link rel="stylesheet" href="./styles.css">
     <title>CSS - Introduccion a CSS</title>
+    <!-- Fuentes -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -139,6 +143,9 @@
     <div class="code">background-color: crimson;</div>
 
 
+    <div class="container">
+        <div class="caja bg-color"></div>
+    </div>
 
 
 
@@ -147,6 +154,9 @@
     <div class="code">background-img: url('./img/imagen.png');</div>
 
 
+    <div class="container">
+        <div class="caja bg-img"></div>
+    </div>
 
 
 
@@ -155,6 +165,9 @@
     <div class="code">background-repeat: repeat;</div>
 
 
+    <div class="container">
+        <div class="caja bg-repeat"></div>
+    </div>
 
 
 
@@ -162,6 +175,12 @@
     <span class="text-span">🎨 background-attachment</span>
     <div class="code">background-attachment: fixed;</div>
 
+
+    <!-- .caja (crea un div con la clase caja) -->
+    <!-- .caja.algo (crea un div con las dos clases caja algo) -->
+    <div class="container">
+        <div class="caja bg-attach"></div>
+    </div>
 
 
 
@@ -171,6 +190,13 @@
     <div class="code">background-position: center; || background-size:cover;</div>
 
 
+    <div class="container">
+        <div class="caja bg-position bg-size"></div>
+    </div>
+
+    <div class="container">
+        <div class="caja shorthand"></div>
+    </div>
 
 
 
@@ -179,6 +205,9 @@
     <div class="code">color: crimson;</div>
 
 
+    <div class="container">
+        <p class="color">Hola soy un texto con color</p>
+    </div>
 
 
 
@@ -189,6 +218,10 @@
     <span class="text-span">👉 offset XY</span>
 
 
+    <div class="container">
+        <div class="caja-shadow offsetXY"></div>
+    </div>
+
 
 
 
@@ -196,23 +229,32 @@
 
 
 
+    <div class="container">
+        <div class="caja-shadow blurRadius"></div>
+    </div>
 
 
     <span class="text-span">👉 spreadRadius</span>
 
 
-
+    <div class="container">
+        <div class="caja-shadow spreadRadius"></div>
+    </div>
 
 
     <span class="text-span">👉 color</span>
 
 
-
+    <div class="container">
+        <div class="caja-shadow color-shadow"></div>
+    </div>
 
 
     <span class="text-span">👉 inset</span>
 
-
+    <div class="container">
+        <div class="caja-shadow inset"></div>
+    </div>
 
 
 
@@ -224,11 +266,17 @@
     <div class="code">font-family: 'Indie Flower';</div>
 
 
+    <div class="container">
+        <div class="font-family">
+            <p>Texto con fuente personalizada</p>
+        </div>
+    </div>
 
 
 
     <span class="text-span">👉 font-weight</span>
     <div class="code">font-weight: bold;</div>
+
 
 
 
@@ -245,13 +293,23 @@
     <div class="code">font-size: 2rem</div>
 
 
-
+    <!-- Ejemplo font weight, style, size -->
+    <div class="container">
+        <div class="font-weight">
+            <p>Texto en bold</p>
+        </div>
+    </div>
 
 
     <span class="text-span">👉 letter-spacing</span>
     <div class="code">letter-spacing: 10px;</div>
 
 
+    <div class="container">
+        <div class="letter-spacing">
+            <p>Texto con letter spacing</p>
+        </div>
+    </div>
 
 
 
@@ -260,18 +318,35 @@
 
 
 
+    <div class="container">
+        <div class="word-spacing">
+            <p>Texto con word spacing</p>
+        </div>
+    </div>
+
 
 
     <span class="text-span">👉 line-height</span>
     <div class="code">line-height: 10px;</div>
 
 
+    <div class="container">
+        <div class="line-height">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, cupiditate excepturi! Blanditiis necessitatibus nihil sequi quis natus ullam recusandae assumenda fugit quos, ipsam ducimus in neque eius quisquam quia quasi officia quam numquam doloremque sint iusto rem aliquam cum dolorum.</p>
+        </div>
+    </div>
 
 
 
     <span class="text-span">👉 text-align</span>
     <div class="code">text-align: center;</div>
 
+
+    <div class="container">
+        <div class="text-align">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quos numquam molestias vel fuga nemo accusantium illum magnam possimus omnis? Suscipit, sunt? Voluptatum, molestias distinctio? Reprehenderit voluptatum maxime neque illum eum? Porro adipisci et labore commodi laudantium officiis, ut cupiditate?</p>
+        </div>
+    </div>
 
 
 
@@ -280,6 +355,11 @@
     <div class="code">text-transform: uppercase;</div>
 
 
+    <div class="container">
+        <div class="text-transform">
+            <p>Holi hola hola hola hola</p>
+        </div>
+    </div>
 
 
 
@@ -287,7 +367,11 @@
     <div class="code">text-decoration: underline;</div>
 
 
-
+    <div class="container">
+        <div class="text-decoration">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque mollitia ut dignissimos fugit blanditiis facilis porro adipisci consectetur illo eos?</p>
+        </div>
+    </div>
 
 
 
@@ -297,6 +381,12 @@
     <span class="text-span">👉 list-style-type</span>
 
 
+    <ul class="container list-none">
+        <li>Lista sin estilo</li>
+        <li>Lista sin estilo</li>
+        <li>Lista sin estilo</li>
+    </ul>
+
 
 
 
@@ -304,11 +394,23 @@
 
 
 
+    <ul class="container list-position">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
 
 
     <span class="text-span">👉 list-style-image</span>
 
 
+    <!-- li*3{Texto hola $} -->
+    <ul class="container list-img">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
 
 
 

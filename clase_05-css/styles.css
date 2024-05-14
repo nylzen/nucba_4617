@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poetsen+One&display=swap');
+
+/* body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} */
+
+
 .container {
   background: #282828;
   border-radius: 16px;
@@ -68,4 +77,157 @@ h5 {
 .vw {
   background:#8c54fb;
   width: 50vw;
+}
+
+/* Backgrounds */
+.bg-color {
+  background-color: crimson;
+}
+
+.bg-img {
+  /* background-image: url('./img/bg-pattern.jpg'); */
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf0LuMnGHfTMV19hjWkwWApf2Whm2ulDBL8uJtq7CBcg&s');
+  /* background-position: top right; */
+  background-size: cover;
+}
+
+/* body {
+  background-image: url('./img/bg-pattern.jpg');
+  background-size: cover;
+} */
+
+.bg-repeat {
+  background-image: url('./img/bg-repeat.png');
+  background-repeat: no-repeat;
+}
+
+/* Ctrl + /
+Ctrl k c
+Ctrl k u
+*/
+
+.bg-attach {
+  background-image: url('./img/bg-pattern.jpg');
+  background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+  /* background-size:cover; */
+  background-attachment: fixed;
+  width: 90vw;
+  height: 50vh;
+}
+
+/* body {
+  background-image: url('./img/bg-pattern.jpg');
+  background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+  background-size:cover;
+  background-attachment: fixed;
+} */
+
+.bg-position {
+  background-image: url('./img/messi.webp');
+  background-position: center;
+}
+
+.bg-size {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.shorthand {
+  background: url('./img/messi.webp') center/cover no-repeat;
+}
+
+.color {
+  /* color: crimson; */
+  color: #28dded;
+}
+
+/* Box shadow - Sombrita */
+.caja-shadow {
+  background:#8c54fb;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.offsetXY {
+  box-shadow: 10px 10px;
+}
+
+.blurRadius {
+  box-shadow: 10px 10px 15px;
+}
+
+.spreadRadius {
+  box-shadow: 10px 10px 15px 5px;
+}
+
+.color-shadow {
+    box-shadow: 10px 10px 15px 5px #e11d476c;
+}
+
+.inset {
+  box-shadow: inset 10px 10px 5px 5px #000;
+}
+
+/* Fuentes */
+
+
+.font-family {
+    font-family: "Dancing Script", cursive;
+    font-size: 2rem;
+}
+
+.font-weight {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+.letter-spacing {
+  letter-spacing: 16px;
+}
+
+.word-spacing {
+  word-spacing: 50px;
+}
+
+.line-height {
+  line-height: 75px;
+}
+
+.text-align {
+  text-align: center;
+  text-align: left;
+  text-align: right;
+  text-align: justify;
+}
+
+.text-transform {
+  text-transform: capitalize;
+  text-transform: uppercase;
+  text-transform: lowercase;
+}
+
+.text-decoration {
+  text-decoration: underline;
+}
+
+/* Listas */
+.list-none {
+  /* list-style-type: none; */
+  list-style: none;
+}
+
+.list-position {
+  list-style-position: inside;
+  list-style-type: square;
+  list-style-type: armenian;
+  list-style-type: upper-roman;
+}
+
+.list-img {
+  list-style-image: url('./img/messi-list-img.jpg');
+  list-style-position: inside;
 }
