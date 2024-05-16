@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.caja {
+  width: 100px;
+  height: 100px;
+  background: #8c54fb;
+}
+
+.content-box {
+  padding: 20px;
+  border: 10px solid black;
+}
+
+/* overflow */
+
+.overflow-box {
+  width: 100px;
+  height: 100px;
+  background: #8c54fb;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.scroll {
+  /* overflow: scroll; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.auto {
+  overflow: auto;
+}
+
+/* padding */
+.padding {
+  border: 1px solid red;
+  /* padding: 20px; a todos los lados */
+  /* primer valor arriba y abajo, segundo valor a los costados */
+  /* padding: 20px 0 ; */
+
+  /* 3 valores */
+  /* 1er: arriba
+    2do: costados
+    3ro: abajo
+  */
+  /* padding: 20px 0 15px; */
+  /* 4 valores, arriba derecha abajo izquierda */
+  padding: 20px 0px 0px 0px ;
+  padding-top: 10px;
+  /* padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 90px; */
+}
+
+/* border */
+.border {
+  border: 5px solid #8c54fb;
+  padding: 5px;
+  margin-bottom:20px ;
+}
+
+.dashed {
+  border: 5px dashed #8c54fb;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.dotted {
+  border: 3px dotted #8c54fb;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.double {
+  border: 5px double #8c54fb;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.borde {
+  padding: 5px;
+  border-left: 3px dashed #8c54fb;
+  border-bottom: 10px double #8c54fb;
+}
+
+.radius {
+  padding: 10px;
+  background: #8c54fb;
+  /* border-radius: 10px 20px 30px 40px; */
+  border-radius: 10px;
+}
+
+/* margin */
+.margin {
+  /* Margin funciona exactamente igual que el padding para poner los valores */
+  margin: 30px 0;
+  padding: 10px;
+}
+
+/* Css layout */
+.block {
+  border: 1px solid #8c54fb;
+  /* display: inline; */
+}
+
+.inline {
+  border: 1px solid crimson;
+  /* display: block; */
+}
+
+/* Positions */
+
+.caja {
+  margin: 20px 0 ;
+}
+
+.relative {
+  background: crimson;
+  position: relative;
+  /* Al darle relative accedemos a las propiedades: top, bottom, left, right */
+  left: 40px;
+  top: 40px;
+  /* right: 30px; */
+  /* bottom: 10px; */
+}
+
+.padre {
+  position: relative;
+}
+
+.absolute {
+  background: crimson;
+  /* border: 1px solid crimson; */
+  /* background-color: transparent; */
+  position: absolute;
+  bottom: 0px;
+  left:0px;
+}
+
+.fixed {
+  background: #25D366;
+  border: 10px solid white;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  /* text-align: center; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
