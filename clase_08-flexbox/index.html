@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./logo-nucba.png" />
+
+    <!-- Estilos base de la página que usamos como template -->
+    <link rel="stylesheet" href="base.css" />
+    <!-- Estilos de la clase -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>CSS - Flexbox</title>
+  </head>
+
+  <body>
+    <h1>
+      1.7 - Clase Flexbox
+      <img src="./img/logo-nucba.png" alt="logo" class="logo" />
+    </h1>
+    <hr class="hr" />
+
+    <!--------------------------- Flex direction----------------------------->
+
+    <h2>Flex direction</h2>
+    <span class="text-span">👉 row (por defecto)</span>
+
+
+    <div class="container row">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+    <span class="text-span">👉 row-reverse</span>
+
+
+      <div class="container row-reverse">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+    <span class="text-span">👉 column</span>
+
+
+
+    <div class="container column">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+
+    <span class="text-span">👉 column-reverse</span>
+
+
+    <div class="container column-reverse">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+
+    <!--------------------------- Flex wrap ----------------------------->
+
+    <hr class="hr" />
+    <h2>Flex Wrap</h2>
+    <span class="text-span">👉 wrap</span>
+
+
+    <div class="container wrap">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+
+    <span class="text-span">👉 nowrap</span>
+
+
+
+    <div class="container nowrap">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+      <div class="caja">4</div>
+      <div class="caja">5</div>
+    </div>
+
+
+
+    <hr class="hr" />
+    <!--------------------------- Flex flow ----------------------------->
+    <h2>Flex flow</h2>
+
+
+
+    <!-- TODO: -->
+
+    <hr class="hr" />
+    <!--------------------------- Justify Content----------------------------->
+    <h2>Justify Content</h2>
+
+    <span class="text-span">👉 flex-start</span>
+
+
+    <div class="container jc-start">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+    <span class="text-span">👉 flex-end</span>
+
+ <div class="container jc-end">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+    <span class="text-span">👉 center</span>
+
+
+ <div class="container jc-center">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+    <span class="text-span">👉 space-between</span>
+
+
+    <div class="container jc-between">
+      <!-- <div class="caja">1</div> -->
+      <!-- <div class="caja">2</div> -->
+      <p>Logo</p>
+
+      <div class="hijo2">
+       <a href="#">Compra</a>
+       <a href="#">Compra</a>
+       <a href="#">Compra</a>
+       </div>
+      <!-- <div class="caja">3</div> -->
+    </div>
+
+
+
+
+    <span class="text-span">👉 space-around</span>
+
+
+ <div class="container jc-around">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+    <span class="text-span">👉 space-evenly</span>
+
+
+ <div class="container jc-evenly">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+    <hr class="hr" />
+
+    <!--------------------------- Align items ----------------------------->
+
+    <h2>Align-Items</h2>
+
+    <span class="text-span">👉 flex-start</span>
+
+
+    <div class="column-container ai-start">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+    <span class="text-span">👉 flex-end</span>
+
+
+
+    <div class="column-container ai-end">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+    <span class="text-span">👉 center</span>
+
+
+   <div class="column-container ai-center">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+    <span class="text-span">👉 stretch</span>
+
+
+   <div class="column-container ai-stretch">
+      <div class="caja-stretch">1</div>
+      <div class="caja-stretch">2</div>
+      <div class="caja-stretch">3</div>
+    </div>
+
+
+
+    <span class="text-span">👉 baseline</span>
+
+
+   <div class="column-container ai-baseline">
+      <div class="caja-baseline baseline-1">1</div>
+      <div class="caja-baseline baseline-2">2</div>
+      <div class="caja-baseline baseline-3">3</div>
+    </div>
+
+
+
+    <hr class="hr" />
+
+    <!--------------------------- Align Content ----------------------------->
+
+    <h2>Align-Content</h2>
+
+    <span class="text-span">👉 flex-start</span>
+
+
+    <div class="ac-container ac-start">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+
+    <span class="text-span">👉 flex-end</span>
+
+
+
+    <div class="ac-container ac-end">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+
+    <span class="text-span">👉 center</span>
+
+
+    <div class="ac-container ac-center">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+
+    <span class="text-span">👉 space-between</span>
+
+
+    <div class="ac-container ac-between">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+    <span class="text-span">👉 space-around</span>
+
+
+    <div class="ac-container ac-around">
+      <div class="caja">1</div>
+      <div class="caja">2</div>
+      <div class="caja">3</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+    <span class="text-span">👉 stretch</span>
+
+
+    <div class="ac-container ac-stretch">
+      <div class="caja-stretch">1</div>
+      <div class="caja-stretch">2</div>
+      <div class="caja-stretch">3</div>
+      <div class="caja-stretch">3</div>
+    </div>
+
+
+
+    <hr class="hr" />
+
+    <!--------------------------- Propiedades de hijos ----------------------------->
+
+    <h2>Propiedades para los hijos</h2>
+
+    <span class="text-span">👉 order</span>
+
+
+    <div class="container flex">
+      <div class="caja order-1">1</div>
+      <div class="caja order-2">2</div>
+      <div class="caja order-3">3</div>
+    </div>
+
+
+
+
+    <span class="text-span">👉 Flex grow</span>
+
+
+    <div class="container flex">
+      <div class="caja grow">1</div>
+      <div class="caja grow-2">2</div>
+      <div class="caja">3</div>
+    </div>
+
+
+
+
+    <span class="text-span">👉 Flex shrink</span>
+
+
+    <div class="container container-shrink flex">
+      <div class="caja shrink-1">1</div>
+      <div class="caja shrink-2">2</div>
+      <div class="caja shrink-3">3</div>
+    </div>
+
+
+
+
+
+    <span class="text-span">👉 Flex basis</span>
+
+
+    <div class="container flex">
+      <div class="caja caja-basis-1">4</div>
+      <div class="caja caja-basis-2">4</div>
+      <div class="caja caja-basis-3">4</div>
+    </div>
+
+
+
+
+    <span class="text-span">👉 align-self</span>
+
+    <div class="container self">
+      <div class="caja self-1">1</div>
+      <div class="caja self-2">2</div>
+      <div class="caja self-3">3</div>
+    </div>
+
+
+
+  </body>
+</html>
