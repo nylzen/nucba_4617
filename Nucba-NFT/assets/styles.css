@@ -18,6 +18,8 @@
   /* Decoration */
   --fire: #ff6d00;
   --electric: #64d3ff;
+
+  --max-width: 1200px;
 }
 
 * {
@@ -34,7 +36,7 @@
 /* Header */
 header {
   /* background: #272d37; */
-  background: var(--secondary) ;
+  background: var(--secondary);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +63,7 @@ header {
 }
 
 .navbar {
-  gap: 150px
+  gap: 150px;
 }
 
 .navbar-list {
@@ -71,4 +73,132 @@ header {
 .navbar-list a {
   color: var(--text-gray);
   font-size: 14px;
+}
+
+/* Main */
+body {
+  background-color: var(--background);
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Hero */
+#hero {
+  max-width: var(--max-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 70px 0;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 50%;
+}
+
+.hero-info h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text-white);
+}
+
+.hero-info p {
+  font-size: 14px;
+  width: 70%;
+  color: var(--text-gray);
+}
+
+.hero-info span {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero-info a {
+  background: var(--primary);
+  color: var(--text-white);
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 14px;
+}
+
+/* Card */
+.hero-card {
+  background: var(--secondary);
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+}
+
+.hero-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-card-top h3 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.hero-card-top span {
+  background: var(--primary);
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.hero-card-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-card-creator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-card-creator img {
+  height: 40px;
+}
+
+.creator-title,
+.hero-card-price p {
+  color: var(--text-gray);
+  font-size: 12px;
+}
+
+.creator-name {
+  color: var(--text-white);
+  font-size: 14px;
+}
+
+.hero-card-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hero-card-price span{
+  font-weight: 700;
 }
