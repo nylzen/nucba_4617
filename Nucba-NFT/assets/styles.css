@@ -202,3 +202,57 @@ main {
 .hero-card-price span{
   font-weight: 700;
 }
+
+/* ------------------------------------------------------------- */
+/* ====================== INFO SECTION ========================= */
+/* ------------------------------------------------------------- */
+
+#info {
+  max-width: var(--max-width);
+  padding: 70px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  /* border: 1px solid green; */
+}
+
+#info h2 {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.info-cards-container {
+  /* background: crimson; */
+  display: flex;
+  gap: 20px;
+}
+
+.info-card {
+  background: var(--secondary);
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+}
+
+.info-card img {
+  width: 50px;
+}
+
+.info-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.info-card p {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-gray);
+}
