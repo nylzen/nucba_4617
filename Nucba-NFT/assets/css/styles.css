@@ -35,8 +35,9 @@
 
 /* Header */
 header {
-  /* background: #272d37; */
-  background: var(--secondary);
+  background: linear-gradient(#121e3c, var(--background));
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -108,7 +109,9 @@ main {
 .hero-info h1 {
   font-size: 48px;
   font-weight: 800;
-  color: var(--text-white);
+  background: linear-gradient(to top, #30cfd0, #c43ad6);
+  color: transparent;
+  background-clip: text;
 }
 
 .hero-info p {
@@ -401,7 +404,7 @@ main {
   gap: 10px;
 }
 
- .product-mid .price {
+.product-mid .price {
   font-weight: 800;
 }
 
@@ -461,4 +464,294 @@ footer p {
 
 footer span {
   font-weight: 800;
+}
+
+
+/* INPUTS */
+#menu-toggle,
+#cart-toggle,
+.menu-label {
+  display: none;
+}
+
+/* CARRITO */
+.cart {
+  position: absolute;
+  background: linear-gradient(to top, #121e3c, var(--background));
+  top: 65px;
+  right: 0;
+  height: calc(100vh - 65px);
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow-y: scroll;
+  display: none;
+}
+
+.cart::-webkit-scrollbar {
+  display: none;
+}
+
+.cart h2 {
+  color: var(--text-white);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Item carrito */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  /* background: #13141534; */
+  border: 1px solid var(--electric);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cart-item img {
+  height: 65px;
+  width: 65px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  color: var(--text-white);
+  font-size: 14px;
+}
+
+.item-bid {
+  color: var(--text-gray);
+  font-size: 12px;
+}
+
+.item-price {
+  background: linear-gradient(to right, #30cfd0, #c43ad6);
+  background-clip: text;
+  color: transparent;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.item-handler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.quantity-handler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: 5px;
+  color: var(--text-white);
+}
+
+.item-quantity {
+  color: var(--text-gray);
+}
+
+.up {
+  border: 1px solid var(--electric);
+}
+
+.down {
+  background: var(--secondary);
+  border: 1px solid var(--electric);
+}
+
+.divider {
+  border: 0.5px solid var(--electric);
+}
+
+.cart-total {
+  display: flex;
+  color: var(--text-white);
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cart-toggle:checked + .cart {
+  display: flex;
+}
+/* ------------------------------------------------------------- */
+/* ==================== MEDIAQUERIES =========================== */
+/* ------------------------------------------------------------- */
+
+/* Notebooks y Tablets */
+@media (max-width: 992px) {
+  /* Header */
+  .navbar {
+    gap: 30px;
+  }
+
+  .cart-icon {
+    height: 20px;
+  }
+
+  .navbar-list {
+    position: absolute;
+    top: 65px;
+    left: 5%;
+    right: 5%;
+    flex-direction: column;
+    width: 90%;
+    background: var(--nav-bg);
+    border: 2px solid var(--electric);
+    border-top: 0;
+    border-radius: 0px 0px 15px 15px;
+    gap: 25px;
+    padding: 45px 0;
+    display: none;
+  }
+
+  .navbar-list a {
+    font-size: 1.2rem;
+  }
+
+  .menu-label {
+    display: flex;
+    order: 2;
+  }
+
+  .menu-label img {
+    width: 25px;
+    height: 20px;
+  }
+
+  /* LA MAGIA */
+  /* EL elemento seguido del + SI O SI tiene que seguir despues del input en el HTML. UN HERMANO INMEDIATO*/
+
+  /* Con la ~ el elemento puede estar o no seguido despues del input (PUEDE TENER ELEMENTOS EN MEDIO) */
+  #menu-toggle:checked + .navbar-list {
+    display: flex;
+  }
+
+  .hero-info {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-top: 70px;
+  }
+
+  /* .hero-info * {
+    border: 1px solid red;
+  } */
+
+  .hero-info h1 {
+    max-width: 500px;
+  }
+
+  .hero-info p {
+    max-width: 600px;
+  }
+
+  .hero-card {
+    display: none;
+  }
+
+  /* Info */
+  .info-cards-container {
+    max-width: 90%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Discover */
+  .discover-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .discover-text {
+    gap: 40px;
+  }
+
+  .discover-cards {
+    max-width: 90%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .discover-cards img {
+    width: 35%;
+  }
+
+  /* Productos */
+  .categories {
+    max-width: 390px;
+    flex-wrap: wrap;
+  }
+
+  .category {
+    width: 120px;
+  }
+
+  .products-container {
+    max-width: 900px;
+  }
+  .product {
+    max-width: 300px;
+  }
+}
+
+/* Celu */
+@media (max-width: 576px) {
+  .cart {
+    width: 100%;
+    left: 0;
+  }
+
+  .cart-item {
+    flex-wrap: wrap;
+  }
+
+
+  /* Hero */
+  .hero-info h1 {
+    font-size: 2rem;
+  }
+  .hero-info p {
+    font-size: 1rem;
+  }
+
+  /* Info */
+  #info h2 {
+    max-width: 80%;
+    text-align: center;
+  }
+
+  #discover h2 {
+    width: 100%;
+  }
+
+  .discover-text {
+    width: 80%;
+  }
+
+  .discover-cards {
+    flex-direction: column;
+  }
+
+  .discover-cards img {
+    width: 100%;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    text-align: center;
+  }
 }

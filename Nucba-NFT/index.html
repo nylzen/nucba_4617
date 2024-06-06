@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nucba NFT</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- HEADER / MAIN / FOOTER -->
@@ -14,7 +20,13 @@
       <!-- Logo -->
       <img src="./assets/img/logo.png" alt="Logo nucba" class="logo" />
       <!-- Navbar y carrito -->
+
       <nav class="navbar">
+        <label for="menu-toggle" class="menu-label">
+          <img src="./assets/img/menu.png" alt="" class="menu-icon" />
+        </label>
+        <input type="checkbox" id="menu-toggle" />
+
         <ul class="navbar-list">
           <li><a href="#hero">Home</a></li>
           <li><a href="#">Descubre</a></li>
@@ -24,7 +36,92 @@
         </ul>
 
         <!-- Carrito -->
-        <img src="./assets/img/cart-icon.svg" alt="Carrito" class="cart-icon" />
+        <label for="cart-toggle" class="cart-label">
+          <img
+            src="./assets/img/cart-icon.svg"
+            alt="Carrito"
+            class="cart-icon"
+          />
+        </label>
+        <input type="checkbox" id="cart-toggle" />
+
+        <!-- ARMAR EL CARRITO -->
+        <div class="cart">
+          <h2>Tus NFTS</h2>
+          <!-- item 1 -->
+          <div class="cart-item">
+            <img src="./assets/img/cart/cart-img.png" alt="" />
+            <div class="item-info">
+              <h3 class="item-title">Messi</h3>
+              <p class="item-bid">Current bid</p>
+              <span class="item-price">5 ETH</span>
+            </div>
+            <!-- Handler qty -->
+            <div class="item-handler">
+              <span class="quantity-handler down">-</span>
+              <span class="item-quantity">1</span>
+
+              <span class="quantity-handler up">+</span>
+            </div>
+          </div>
+
+          <!-- item 2 -->
+          <div class="cart-item">
+            <img src="./assets/img/cart/cart-img.png" alt="" class="cart-icon"/>
+            <div class="item-info">
+              <h3 class="item-title">Messi</h3>
+              <p class="item-bid">Current bid</p>
+              <span class="item-price">5 ETH</span>
+            </div>
+            <!-- Handler qty -->
+            <div class="item-handler">
+              <span class="quantity-handler down">-</span>
+              <span class="item-quantity">1</span>
+
+              <span class="quantity-handler up">+</span>
+            </div>
+          </div>
+          <!-- item 3 -->
+          <div class="cart-item">
+            <img src="./assets/img/cart/cart-img.png" alt="" />
+            <div class="item-info">
+              <h3 class="item-title">Messi</h3>
+              <p class="item-bid">Current bid</p>
+              <span class="item-price">5 ETH</span>
+            </div>
+            <!-- Handler qty -->
+            <div class="item-handler">
+              <span class="quantity-handler down">-</span>
+              <span class="item-quantity">1</span>
+
+              <span class="quantity-handler up">+</span>
+            </div>
+          </div>
+          <!-- item 4 -->
+          <div class="cart-item">
+            <img src="./assets/img/cart/cart-img.png" alt="" />
+            <div class="item-info">
+              <h3 class="item-title">Messi</h3>
+              <p class="item-bid">Current bid</p>
+              <span class="item-price">5 ETH</span>
+            </div>
+            <!-- Handler qty -->
+            <div class="item-handler">
+              <span class="quantity-handler down">-</span>
+              <span class="item-quantity">1</span>
+
+              <span class="quantity-handler up">+</span>
+            </div>
+          </div>
+
+          <span class="divider"></span>
+
+          <div class="cart-total">
+            <p>Total:</p>
+            <span>18 ETH</span>
+          </div>
+          <button class="btn-add">Comprar</button>
+        </div>
       </nav>
     </header>
     <main>
