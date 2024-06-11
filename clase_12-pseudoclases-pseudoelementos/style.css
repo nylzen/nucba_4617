@@ -1,0 +1,205 @@
+.container {
+  background-color: #282828;
+  padding: 16px;
+  margin: 20px 0;
+  border-radius: 16px;
+  display: flex;
+  gap: 20px;
+}
+
+/* Hover */
+/* a {
+  color: white;
+} */
+
+.hover {
+  background: crimson;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all .3s ease;
+}
+
+.hover:hover{
+  background: #8c54fb;
+  padding: 50px;
+  border-radius: 0;
+  font-size: 2rem;
+}
+
+.active:active {
+  color: greenyellow
+}
+.caja {
+  width: 100px;
+  height: 100px;
+  background: crimson;
+  transition: all .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .caja:active {
+  background: greenyellow;
+  border-radius: 10px;
+} */
+
+
+/* a {
+  color: white;
+}
+a:visited {
+  color: purple;
+} */
+
+.visited:visited {
+  color: greenyellow;
+}
+
+.link:link {
+  color: yellow;
+}
+
+
+/* Focus */
+
+.focus-input {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.focus-input:focus {
+  border: 2px solid crimson;
+  outline: 2px solid blue;
+}
+
+/* First-child */
+.first .caja:first-child {
+  background-color: transparent;
+  border: 1px solid crimson;
+}
+
+/* Last-child */
+.last .caja:last-child {
+  background-color: transparent;
+  border: 1px solid crimson;
+}
+
+.first-of-type p:first-of-type {
+  color: #8c54fb;
+}
+.nth-child-odd,
+.nth-child-even {
+  flex-wrap: wrap;
+}
+
+.nth-child-odd .caja:nth-child(odd) {
+  background: #8c54fb;
+}
+
+.nth-child-even .caja:nth-child(even) {
+  background: #8c54fb;
+}
+
+.nth-child-number .caja:nth-child(4) {
+  background: #8c54fb;
+}
+
+.nth-child-n .caja:nth-child(3n) {
+  background: #8c54fb;
+}
+
+.nth-child-n-number .caja:nth-child(4n + 1) {
+  background: #8c54fb;
+}
+
+/* PSEUDOELEMENTOS */
+.first-letter::first-letter {
+  color: crimson;
+  font-size: 6rem;
+  letter-spacing: 16px;
+  font-family: fantasy;
+}
+
+.first-line::first-line {
+  background: crimson;
+}
+
+/* Cuando usamos after o before tenemos que darle un content SI O SI para que funcione */
+.before::before {
+  content: '🍕';
+  /* content: 'HOLA SOY UN BEFORE'; */
+  font-size: 2rem;
+}
+
+.after::after {
+  content:'❤';
+  /* position: absolute; */
+  /* background: red; */
+  width: 100px;
+  height: 100px;
+}
+
+
+.input-placeholder {
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+}
+
+.input-placeholder::placeholder {
+  color: red;
+  font-weight: bold;
+}
+
+
+/* Ejemplo after y before */
+
+.contenedor {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  padding: 20px 30px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  font-size: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all .5s;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: all .5s;
+}
+
+.btn:hover::before {
+  transform: translateX(0);
+}
+
+.btn:hover {
+  color: black;
+}
+
+.caja {
+  overflow: hidden;
+}
