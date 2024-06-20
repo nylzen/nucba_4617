@@ -6,6 +6,8 @@
     <title>Nucba NFT</title>
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/mediaqueries.css">
+    <link rel="stylesheet" href="./assets/css/animaciones.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -29,19 +31,20 @@
 
         <ul class="navbar-list">
           <li><a href="#hero">Home</a></li>
-          <li><a href="#">Descubre</a></li>
-          <li><a href="#">BTC</a></li>
+          <li><a href="#discover">Descubre</a></li>
+          <li><a href="#products">BTC</a></li>
           <li><a href="#">YouTube</a></li>
           <li><a href="#">Contacto</a></li>
         </ul>
 
         <!-- Carrito -->
         <label for="cart-toggle" class="cart-label">
-          <img
+          <!-- <img
             src="./assets/img/cart-icon.svg"
             alt="Carrito"
             class="cart-icon"
-          />
+          /> -->
+          <i class="fa-solid fa-cart-shopping cart-icon"></i>
         </label>
         <input type="checkbox" id="cart-toggle" />
 
@@ -65,22 +68,8 @@
             </div>
           </div>
 
-          <!-- item 2 -->
-          <div class="cart-item">
-            <img src="./assets/img/cart/cart-img.png" alt="" class="cart-icon"/>
-            <div class="item-info">
-              <h3 class="item-title">Messi</h3>
-              <p class="item-bid">Current bid</p>
-              <span class="item-price">5 ETH</span>
-            </div>
-            <!-- Handler qty -->
-            <div class="item-handler">
-              <span class="quantity-handler down">-</span>
-              <span class="item-quantity">1</span>
 
-              <span class="quantity-handler up">+</span>
-            </div>
-          </div>
+
           <!-- item 3 -->
           <div class="cart-item">
             <img src="./assets/img/cart/cart-img.png" alt="" />
@@ -122,13 +111,16 @@
           </div>
           <button class="btn-add">Comprar</button>
         </div>
+
+        <!-- Overlay -->
+         <div class="overlay"></div>
       </nav>
     </header>
     <main>
       <!-- Hero / Portada -->
       <section id="hero">
         <div class="hero-info">
-          <h1>Descubre la nueva era de Crypto</h1>
+          <h1>Descubre la nueva era de <span>Crypto</span></h1>
           <p>
             NUCBA NFT es el primer Marketplace educativo tecnológico de NFT, que
             son elementos digitales épicos que realmente puedes poseer. Los
@@ -430,6 +422,13 @@
         </div>
         <button class="btn-more">Ver mas</button>
       </section>
+      <!-- <section id="contacto">
+        <h2>Contactanos</h2>
+        <form>
+          <label for="name">Nombre</label>
+          <input type="text" id="name">
+        </form>
+      </section> -->
     </main>
     <footer>
       <ul class="footer-links">

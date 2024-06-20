@@ -1,0 +1,169 @@
+/* Notebooks y Tablets */
+@media (max-width: 992px) {
+  /* Header */
+  .navbar {
+    gap: 30px;
+  }
+
+  .cart-icon {
+    height: 20px;
+  }
+
+  .navbar-list {
+    position: absolute;
+    top: 65px;
+    left: 5%;
+    right: 5%;
+    flex-direction: column;
+    width: 90%;
+    background: var(--nav-bg);
+    border: 2px solid var(--electric);
+    border-top: 0;
+    border-radius: 0px 0px 15px 15px;
+    gap: 25px;
+    padding: 45px 0;
+    display: none;
+  }
+
+  .navbar-list a {
+    font-size: 1.2rem;
+  }
+
+  .menu-label {
+    display: flex;
+    order: 2;
+  }
+
+  .menu-label img {
+    width: 25px;
+    height: 20px;
+  }
+
+  /* LA MAGIA */
+  /* EL elemento seguido del + SI O SI tiene que seguir despues del input en el HTML. UN HERMANO INMEDIATO*/
+
+  /* Con la ~ el elemento puede estar o no seguido despues del input (PUEDE TENER ELEMENTOS EN MEDIO) */
+  #menu-toggle:checked + .navbar-list {
+    display: flex;
+  }
+
+  .hero-info {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-top: 70px;
+  }
+
+  /* .hero-info * {
+    border: 1px solid red;
+  } */
+
+  .hero-info h1 {
+    max-width: 500px;
+  }
+
+  .hero-info p {
+    max-width: 600px;
+  }
+
+  .hero-card {
+    display: none;
+  }
+
+  /* Info */
+  .info-cards-container {
+    max-width: 90%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Discover */
+  .discover-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .discover-text {
+    gap: 40px;
+  }
+
+  .discover-cards {
+    max-width: 90%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .discover-cards img {
+    width: 35%;
+  }
+
+  /* Productos */
+  .categories {
+    max-width: 390px;
+    flex-wrap: wrap;
+  }
+
+  .category {
+    width: 120px;
+  }
+
+  .products-container {
+    max-width: 900px;
+  }
+  .product {
+    max-width: 300px;
+  }
+}
+
+/* Celu */
+@media (max-width: 576px) {
+  .cart {
+    width: 100%;
+    left: 0;
+  }
+
+  .cart-item {
+    flex-wrap: wrap;
+  }
+
+
+  /* Hero */
+  .hero-info h1 {
+    font-size: 2rem;
+  }
+  .hero-info p {
+    font-size: 1rem;
+  }
+
+  /* Info */
+  #info h2 {
+    max-width: 80%;
+    text-align: center;
+  }
+
+  #discover h2 {
+    width: 100%;
+  }
+
+  .discover-text {
+    width: 80%;
+  }
+
+  .discover-cards {
+    flex-direction: column;
+  }
+
+  .discover-cards img {
+    width: 100%;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    text-align: center;
+  }
+}
