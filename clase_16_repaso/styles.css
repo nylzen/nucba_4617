@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  scroll-padding-top: 80px;
+}
+
+.caja {
+  width: 100px;
+  height: 100px;
+  background-color: crimson;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 20px;
+  border: 1px solid crimson;
+  position: relative;
+}
+
+.caja:nth-child(2) {
+  background-color: cornflowerblue;
+  /* background-color: transparent; */
+  /* border: 1px solid cornflowerblue; */
+  width: 200px;
+  height: 200px;
+  /* position: fixed; */
+  position: absolute;
+  /* top: 0; */
+  /* left: 0; */
+  z-index: 1;
+}
+
+.caja:nth-child(1){
+  z-index: 2;
+}
+
+
+.caja:nth-child(3){
+  transition: all .5s;
+}
+.caja:nth-child(3):hover{
+  transform: scale(1.2);
+}
+
+header {
+  background: coral;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 2rem; */
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+  padding: 0 2rem;
+  /* z-index: 99999; */
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  /* width: 50%; */
+  height: 500px;
+}
+
+section {
+  background-color: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  /* flex-direction: column; */
+  gap: 20px;
+  /* height: 100%; */
+  max-width: 800px;
+  margin: 0 auto;
+
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background-color: coral;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.btn-ok {
+  background: green;
+  color: white;
+}
+
+.btn-container {
+  display: flex;
+  gap: 20px;
+}
