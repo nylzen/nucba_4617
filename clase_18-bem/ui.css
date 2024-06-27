@@ -1,0 +1,21 @@
+:root {
+  --primary: red;
+}
+
+.button {
+  background-color: #252525;
+  padding: 10px 25px;
+  border-radius: 10px;
+  color: white;
+}
+
+.button--secondary {
+  background: transparent;
+  border: 2px solid white;
+  transition: all .5s;
+}
+
+.button--secondary:hover {
+  background: white;
+  color: black;
+}

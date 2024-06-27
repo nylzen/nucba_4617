@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #131415;
+  color: white;
+}
+
+/* ============================ */
+/* =========UI=========== */
+
+.button {
+  background-color: #252525;
+  padding: 10px 25px;
+  border-radius: 10px;
+  color: white;
+}
+
+.button--secondary {
+  background: transparent;
+  border: 2px solid white;
+  transition: all 0.5s;
+}
+
+.button--secondary:hover {
+  background: white;
+  color: black;
+}
+
+/* ============================ */
+/* ============================ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #171719;
+  padding: 20px;
+}
+
+.header__logo {
+  width: 40px;
+}
+
+/* .navbar pueden usar cualquiera */
+.header__navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar__link {
+  color: white;
+}
+
+.navbar__link--active {
+  font-weight: bold;
+  color: greenyellow;
+  border-bottom: 1px solid greenyellow;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 2rem;
+}
+
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.info__title {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.hero__img {
+  width: 50%;
+}
+
+.info__btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
