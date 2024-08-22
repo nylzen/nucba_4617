@@ -1,0 +1,18 @@
+.messi {
+  background: yellow;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+#productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px
+}
+
+.card {
+  background: white;
+  color: #000;
+  border-radius: 8px;
+  padding: 2rem
+}
