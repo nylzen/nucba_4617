@@ -1,0 +1,52 @@
+/* .container {
+  background: red;
+  padding: 5rem;
+  width: 100%;
+} */
+
+/* .padre {
+  padding: 2rem;
+  background: blue;
+}
+
+.hijo {
+  background: yellow;
+  color: #000;
+} */
+
+.cambio {
+  background-color: crimson;
+  padding: 20px;
+  color: yellow;
+  font-size: 2rem;
+}
+
+.container {
+  border: 1px dashed crimson;
+}
+
+/* Layout shift */
+
+.messi {
+  display: block;
+  width: 100%;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: crimson;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.hide {
+  opacity: 0;
+}

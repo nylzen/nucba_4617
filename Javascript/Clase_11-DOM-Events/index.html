@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://res.cloudinary.com/dwmqwjm3y/raw/upload/v1676574202/nucba/stylescdn_u7mjb9.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>2.11 Eventos del DOM</title>
+  </head>
+  <body>
+    <header>
+      <h1>2.11 Eventos del DOM</h1>
+      <p>Conocer e implementar distintas formas para la manipulación del DOM</p>
+      <h2>Recursos de la clase:</h2>
+      <ul>
+        <li>
+          📌<a href="https://developer.mozilla.org/es/docs/Web/Events"
+            >Eventos</a
+          >
+        </li>
+      </ul>
+    </header>
+    <main>
+      <hr class="hr" />
+      <!-- onclick / atributo -->
+      <h3 onclick="alert('Estoy haciendo click')">Clickeame</h3>
+
+      <!-- Desde js -->
+      <h3 id="h3">Click</h3>
+
+      <hr class="hr" />
+      <!-- blur / focus -->
+      <h3>Focus/Blur</h3>
+      <input type="text" id="inputBlur" placeholder="Pone algo" />
+
+      <hr class="hr" />
+      <!-- Change -->
+      <h3>Change</h3>
+      <input type="text" id="inputChange" placeholder="Pone algo" />
+
+      <!-- PrevetDefault -->
+      <h3>preventDefault()</h3>
+      <form class="form">
+        <input type="text" class="inputForm" placeholder="Pone algo" />
+        <button>Enviar</button>
+      </form>
+
+      <!-- stop propagation -->
+      <hr class="hr" />
+      <h3>stop propation</h3>
+      <div class="container">
+        <div class="padre">
+          <div>
+            <h3 class="hijo">Holi</h3>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- estilos -->
+       <hr class="hr">
+       <h3>Estilos</h3>
+       <div id="caja">Holis</div>
+       <button class="divBtn">Cambiar color</button>
+
+       <hr class="hr">
+       <div class="container">
+        <h3>Mostrar y ocultar cosas con js</h3>
+        <img src="https://static.messi.com/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-15-at-13.47.35.jpeg?v=1721050304" alt="" class="messi">
+        <div class="btns">
+          <!-- <div class="btn" id="show">Mostrar</div> -->
+          <!-- <div class="btn" id="hide">Ocultar</div> -->
+           <!-- <div id="toggle" class="btn">Ocultar</div> -->
+            <div id="cambiarSrc" class="btn">Cambiar imagen</div>
+        </div>
+       </div>
+    </main>
+
+    <!-- scripts -->
+    <script src="./main.js"></script>
+  </body>
+</html>
