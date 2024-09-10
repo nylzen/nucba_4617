@@ -6,7 +6,7 @@
   - Longitud del nombre y apellido entre 3 caracteres y 25
   - Que el campo no este vacio ✅ => tenemos funcion
   - Que el email sea valido (REGEX)
-  - Que la contraseña tenga X caracteres y tenga un simbolo y un numero
+  - Que la contraseña tenga X caracteres, tenga un simbolo y un numero
 
   Que pasa si las validaciones no se cumplen?
   - Mostramos un mensaje de error abajo del campo
@@ -56,6 +56,7 @@ const isEmailValid = (input) => {
 
   // test
   return regex.test(input.value.trim()); // true o false
+  // return regex.test('   email@gmail.com    '.trim()); // true o false
 };
 
 // Funcion para verificar que el mail no se este usando
