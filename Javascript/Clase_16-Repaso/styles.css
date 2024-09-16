@@ -18,3 +18,34 @@ main {
   justify-content: center;
   gap: 2rem;
 }
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 10px;
+}
+
+.product-card button {
+  background: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.price {
+  background: orange;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #000;
+}
