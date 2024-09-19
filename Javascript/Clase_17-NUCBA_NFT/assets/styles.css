@@ -19,6 +19,7 @@
   /* Decoration */
   --fire: #ff6d00;
   --electric: #64d3ff;
+  user-select: none;
 }
 
 * {

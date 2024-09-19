@@ -2,11 +2,30 @@ const productsContainer = document.querySelector(".products-container");
 const showMoreBtn = document.querySelector(".btn-load");
 const categoriescontainer = document.querySelector(".categories");
 const categoriesList = document.querySelectorAll(".category");
+// Cart
+const cartBtn = document.querySelector(".cart-label");
+// Carrito modal
+const cartMenu = document.querySelector(".cart");
+const productsCart = document.querySelector(".cart-container");
+// Overlay
+const overlay = document.querySelector(".overlay");
+// Menu hamburguesa
+const menuBtn = document.querySelector(".menu-label");
+const menu = document.querySelector(".navbar-list");
+// Total
+const total = document.querySelector('.total')
+// MOdal
+const successModal = document.querySelector(".add-modal")
+
+// Carrito
+let cart = JSON.parse(localStorage.getItem('cart')) || []
+
+const saveCart = () => localStorage.setItem('cart', JSON.stringify(cart))
 
 const createProductTemplate = (product) => {
   // TODO: AGREGAR DATASETS
 
-  const { id, name, bid, user, category, userImg, cardImg } = product;
+  const { id, name, bid, user, userImg, cardImg } = product;
 
   return `
   <div class="product">
@@ -34,7 +53,12 @@ const createProductTemplate = (product) => {
                   <img src="./assets/img/fire.png" alt="" />
                   <p>05:05:05</p>
                 </div>
-                <button class="btn-add">Add</button>
+                <button class="btn-add"
+                  data-id='${id}'
+                  data-name='${name}'
+                  data-bid='${bid}'
+                  data-img='${cardImg}'
+                >Add</button>
               </div>
             </div>
           </div>
@@ -48,7 +72,7 @@ const renderProducts = (products) => {
 // Funcion para ver mas
 const showMoreProducts = () => {
   // Esto viene del appState
-  console.log(appState)
+  console.log(appState);
   appState.currentProductsIndex += 1;
 
   let { products, currentProductsIndex, productsLimit } = appState;
@@ -85,6 +109,11 @@ const changeBtnActiveState = (activeFilter) => {
 const changeFilterState = (btn) => {
   appState.activeFilter = btn.dataset.category;
   changeBtnActiveState(appState.activeFilter);
+  if (!appState.activeFilter) {
+    showMoreBtn.classList.remove("hidden");
+    return;
+  }
+  showMoreBtn.classList.add("hidden");
   // console.log(appState.activeFilter)
 };
 
@@ -100,19 +129,195 @@ const applyFilter = (e) => {
     );
 
     renderProducts(filteredProducts);
-    appState.currentProductsIndex = 0
+    appState.currentProductsIndex = 0;
     return;
   }
 
-  console.log(appState)
+  console.log(appState);
 
   renderProducts(appState.products[0]);
 };
+
+// ====================================== //
+// ============== Logica Menu Carrito ======================= //
+// ====================================== //
+
+const toggleMenu = () => {
+  menu.classList.toggle("open-menu");
+  if (cartMenu.classList.contains("open-cart")) {
+    cartMenu.classList.remove("open-cart");
+    return;
+  }
+
+  overlay.classList.toggle("show-overlay");
+};
+
+const toggleCart = () => {
+  cartMenu.classList.toggle("open-cart");
+  if (menu.classList.contains("open-menu")) {
+    menu.classList.remove("open-menu");
+    return;
+  }
+  overlay.classList.toggle("show-overlay");
+};
+
+const closeMenuAndCart = () => {
+  if (
+    menu.classList.contains("open-menu") ||
+    cartMenu.classList.contains("open-cart")
+  ) {
+    menu.classList.remove("open-menu");
+    cartMenu.classList.remove("open-cart");
+    overlay.classList.remove("show-overlay");
+  }
+};
+
+// ====================================================== //
+// ============== Logica Carrito ======================= //
+// ==================================================== //
+// Logica crear template
+const createCartProductHTML = (cartProduct) => {
+  const {id, name, bid, img, quantity} = cartProduct
+
+  return `
+      <div class="cart-item">
+            <img src="${img}" alt="${name}" />
+            <div class="item-info">
+              <h3 class="item-title">${name}</h3>
+              <p class="item-bid">Current bid</p>
+              <span class="item-price">${bid} ETH</span>
+            </div>
+            <!-- Handler qty -->
+            <div class="item-handler">
+              <span class="quantity-handler down" data-id='${id}'>-</span>
+              <span class="item-quantity">${quantity}</span>
+              <span class="quantity-handler up" data-id='${id}'>+</span>
+            </div>
+          </div>
+  `
+}
+
+// Logica renderizar
+const renderCart = () => {
+  if(!cart.length){
+    productsCart.innerHTML = `<p class="empty-msg">No hay productos en el carrito</p>`
+    return
+  }
+  productsCart.innerHTML = cart.map(createCartProductHTML).join('')
+}
+
+const getCartTotal = () => {
+  const total = cart.reduce((acc, cur) => acc + Number(cur.bid) * cur.quantity, 0)
+  return total
+}
+
+const showCartTotal = () => {
+  total.innerHTML = `${getCartTotal().toFixed(2)} ETH `
+  // const precio = new Intl.NumberFormat('es-AR', {currency: 'ARS', style: 'currency'}).format(getCartTotal())
+  // total.innerHTML = `${precio} `
+  // total.innerHTML = `${getCartTotal().toFixed(2)} ETH `
+}
+
+// Funcion que ejecute todo lo necesario para actualizar el carro
+const updateCartState = () => {
+  saveCart()
+  showCartTotal()
+  renderCart()
+}
+
+const showSuccessModal = (msg) => {
+  successModal.classList.add('active-modal')
+  successModal.innerHTML = msg
+  setTimeout(() => {
+    successModal.classList.remove('active-modal')
+  }, 2000)
+}
+
+const addProduct = (e) => {
+  if (!e.target.classList.contains("btn-add")) return;
+  const product = createProductData(e.target.dataset);
+
+  // Validacion si existe el prod en el cart
+  if (isExistingCartProduct(product)) {
+    addUnitToProduct(product);
+    showSuccessModal('Se agregó una unidad del producto')
+  } else {
+    cart = [...cart, { ...product, quantity: 1 }];
+    showSuccessModal('El producto se agregó al carrito')
+  }
+  updateCartState()
+  console.log(cart);
+};
+
+// Funcion para agregar una unidad
+const addUnitToProduct = (product) => {
+  cart = cart.map((cartProduct) =>
+    cartProduct.id === product.id
+      ? { ...cartProduct, quantity: cartProduct.quantity + 1 }
+      : cartProduct
+  );
+};
+
+// Funcion para crear el objeto con la info del producto
+const createProductData = (product) => {
+  // Destructuring
+  const { id, name, bid, img } = product;
+  return { id, name, bid, img };
+  // Sin destructuring pero retornando el mismo objeto
+  // const id = product.id
+  // const name = product.name
+  // const bid = product.bid
+  // const img = product.img
+  // return { id , name, bid, img };
+  // Sin nada, directamente creando el objeto
+  // return {
+  //   id: product.id,
+  //   name: product.name,
+  //   bid: product.bid,
+  //   img: product.img
+  // }
+};
+
+// Funcion para saber si un producto existe en el carrito
+const isExistingCartProduct = (product) => {
+  return cart.find((item) => item.id === product.id);
+};
+
+// Handle Quantity Plus
+const handlePlusEvent = (id) => {
+  const existingCartProduct = cart.find(item => item.id === id)
+  console.log(existingCartProduct)
+  addUnitToProduct(existingCartProduct)
+}
+
+
+const handleQuantity = (e) => {
+  // console.log(e.target)
+  if(e.target.classList.contains('down')){
+    console.log('resta')
+  } else if (e.target.classList.contains('up')){
+    // console.log(e.target.dataset)
+    handlePlusEvent(e.target.dataset.id)
+  }
+
+  updateCartState()
+}
 
 const init = () => {
   renderProducts(appState.products[0]);
   showMoreBtn.addEventListener("click", showMoreProducts);
   categoriescontainer.addEventListener("click", applyFilter);
+
+  cartBtn.addEventListener("click", toggleCart);
+  menuBtn.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", closeMenuAndCart);
+  window.addEventListener("scroll", closeMenuAndCart);
+
+  document.addEventListener('DOMContentLoaded', renderCart)
+  document.addEventListener('DOMContentLoaded', showCartTotal)
+
+  productsContainer.addEventListener("click", addProduct);
+  productsCart.addEventListener('click', handleQuantity)
 };
 
 init();
