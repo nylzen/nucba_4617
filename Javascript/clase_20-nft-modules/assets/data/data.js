@@ -1,5 +1,5 @@
 // Array de productos
-export const productsData = [
+const productsData = [
   {
     id: 1,
     name: "Golden Messi",
@@ -146,7 +146,7 @@ const DivideProductsInParts = (size) => {
 };
 
 //Función para dividir los productos en arrays de 6 productos y manejar la páginación
-export const appState = {
+const appState = {
   products: DivideProductsInParts(6),
   currentProductsIndex: 0,
   productsLimit: DivideProductsInParts(6).length,
