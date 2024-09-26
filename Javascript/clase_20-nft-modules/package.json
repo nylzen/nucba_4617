@@ -10,5 +10,9 @@
   },
   "devDependencies": {
     "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "scrollreveal": "^4.0.9",
+    "typewriter-effect": "^2.21.0"
   }
 }
