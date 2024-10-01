@@ -9,7 +9,7 @@ const init = () => {
   menuInterfaceInit();
   cartInit();
   typewriterInit()
-  scrollEffectInit()
+  // scrollEffectInit()
 };
 
 init();

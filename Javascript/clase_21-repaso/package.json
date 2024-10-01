@@ -1,0 +1,18 @@
+{
+  "name": "clase_21-repaso",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.13",
+    "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
