@@ -24,6 +24,8 @@ const requestCity = async (city) => {
 
     // console.log(data)
     // return mapperCityData(data)
+    // const dataMapper = getCityData(data)
+    // return dataMapper
     return data
   } catch (error) {
     console.error(`Hubo un error en la peticion: ${error}`);

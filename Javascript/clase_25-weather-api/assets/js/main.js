@@ -11,6 +11,7 @@ const cardContainer = document.querySelector(".card-container");
 const searchMsg = document.querySelector(".search-msg");
 const cityTitle = document.querySelector(".city");
 
+// Ideal el mapper para crearse su propio objeto con la respuesta de la api para asi poder estar mas controlado si algo puede llegar a fallar
 const getCityData = (cityData) => {
   return {
     cityName: cityData.name,

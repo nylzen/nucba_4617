@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://res.cloudinary.com/dwmqwjm3y/raw/upload/v1676574202/nucba/stylescdn_u7mjb9.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Repaso</h1>
+    <a href="#section">Section</a>
+
+    <div class="container"></div>
+    <!-- datalist -->
+    <section id="datalist">
+      <h2>Datalist</h2>
+      <label for="personaje">
+        Elegi tu personaje
+        <input list="personajes" id="personaje" placeholder="Elegi tu heroe" />
+      </label>
+      <datalist id="personajes">
+        <option value="iron man"></option>
+        <option value="spiderman"></option>
+        <option value="hulk"></option>
+      </datalist>
+    </section>
+
+    <article>
+      <details name="hola">
+        <summary>Que es HTML</summary>
+        <p>HTML es un lenguaje de marcado de Hipertexto</p>
+      </details>
+      <details name="hola">
+        <summary>Que es CSS</summary>
+        <p>CSS es Hoja de estilos en cascada</p>
+      </details>
+    </article>
+
+    <section>
+      <!-- <dialog>
+        <p>Greetings, one and all!</p>
+      </dialog> -->
+      <dialog id="favDialog">
+        <form method="dialog">
+          <section>
+            <p>
+              <label for="favAnimal">Favorite animal:</label>
+              <select id="favAnimal">
+                <option></option>
+                <option>Brine shrimp</option>
+                <option>Red panda</option>
+                <option>Spider monkey</option>
+              </select>
+            </p>
+          </section>
+          <menu>
+            <button id="cancel" type="reset">Cancel</button>
+            <button type="submit" id="confirm">Confirm</button>
+          </menu>
+        </form>
+      </dialog>
+
+      <menu>
+        <button id="updateDetails">Update details</button>
+      </menu>
+    </section>
+
+    <section id="section" style="height: 100vh">
+      <h3>Buscador de palabras</h3>
+      <hr class="hr">
+      <form id="form">
+        <input type="text" placeholder="busca una palabra">
+      </form>
+
+      <p id="definition"></p>
+    </section>
+
+
+    <!-- <script>
+      const updateButton = document.getElementById("updateDetails");
+      const cancelButton = document.getElementById("cancel");
+      const favDialog = document.getElementById("favDialog");
+      const submitButton = document.getElementById("confirm");
+
+      updateButton.addEventListener("click", () => {
+        favDialog.showModal();
+      });
+
+      cancelButton.addEventListener("click", () => {
+        favDialog.close();
+      });
+
+      submitButton.addEventListener("click", () => {
+        const values = document.getElementById("favAnimal").value;
+        console.log(values);
+      });
+    </script> -->
+
+    <script src="./main.js"></script>
+  </body>
+</html>
