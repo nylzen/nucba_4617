@@ -16,4 +16,4 @@ const fetchMovies = async (searchTerm, page = 1) => {
   }
 };
 
-fetchMovies(TRENDING );
+// fetchMovies(TRENDING );
