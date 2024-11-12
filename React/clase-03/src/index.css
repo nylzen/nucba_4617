@@ -1,0 +1,27 @@
+:root {
+  --primary-main: crimson;
+  /* --messiFont: 'messi' */
+}
+
+/* @font-face {
+  font-family: messi;
+  src: url('./url a fuente');
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  /* background: #131415;
+  color: white; */
+  font-family: 'Poppins';
+}
+
+a {
+  color: inherit;
+}

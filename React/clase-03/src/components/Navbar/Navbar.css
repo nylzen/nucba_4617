@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.navbar-list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .navbar-list {
+    background-color: red;
+  }
+}
