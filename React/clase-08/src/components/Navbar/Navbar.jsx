@@ -5,9 +5,14 @@ import {
   NavbarContainer,
   NavlinkStyled,
 } from "./NavbarStyles";
-import { routesLinks } from "./routes";
+import { routesLinks } from "../../routes/routesMapper";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+  const { isAuth, user } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   return (
@@ -20,16 +25,16 @@ export const Navbar = () => {
       </Logo>
 
       <LinkContainer>
-        {/* <NavlinkStyled to="/">Home</NavlinkStyled>
-        <NavlinkStyled to="/products" >
-          Products
+        <NavlinkStyled to="/">Home</NavlinkStyled>
+        <NavlinkStyled to="/products">Products</NavlinkStyled>
+        <NavlinkStyled to={isAuth ? `/user/${user}` : `/login`}>
+          {isAuth ? "Perfil" : "Login"}
         </NavlinkStyled>
-        <NavlinkStyled to="/about">About</NavlinkStyled> */}
-        {routesLinks.map((link) => (
+        {/* {routesLinks.map((link) => (
           <NavlinkStyled key={link.id} to={link.path}>
             {link.label}
           </NavlinkStyled>
-        ))}
+        ))} */}
       </LinkContainer>
     </NavbarContainer>
   );

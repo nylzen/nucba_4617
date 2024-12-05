@@ -5,11 +5,6 @@ export const routesLinks = [
     label: 'Home'
   },
   {
-    id: 2,
-    path: '/about',
-    label: 'About'
-  },
-  {
     id: 3,
     path: '/products',
     label: 'Products'
