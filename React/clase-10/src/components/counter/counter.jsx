@@ -9,7 +9,7 @@ import {
 } from "./styles";
 
 export const Counter = () => {
-  const count = useSelector((state) => state.counter.count)
+  const count = useSelector((state) => state.countercito.count)
   const todos = useSelector(state => state.todos)
 
   return (
