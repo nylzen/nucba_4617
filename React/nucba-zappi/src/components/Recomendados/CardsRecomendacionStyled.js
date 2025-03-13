@@ -1,8 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CardsContainer = styled.div`
   display: grid;
-  grid-template-columns: ${({ gridLength }) => `repeat(${gridLength}, 1fr)`};
+  /* grid-template-columns: ${({ gridLength }) =>
+    `repeat(${gridLength}, 1fr)`}; */
+  grid-template-columns: ${(props) => `repeat(${props.messi}, 1fr)`};
   gap: 20px;
   padding: 1rem;
 

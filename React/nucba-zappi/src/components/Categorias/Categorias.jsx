@@ -1,16 +1,13 @@
-import Categoria from "./Categoria";
 import { CategoriasContainer } from "./CategoriasStyles";
+import { categoriesMock } from "../../mock/categories";
+import Categoria from "./Categoria";
 
 const Categorias = () => {
   return (
     <CategoriasContainer>
-      <Categoria />
-      <Categoria />
-      <Categoria />
-      <Categoria />
-      <Categoria />
-      <Categoria />
-      <Categoria />
+      {categoriesMock.map((category) => (
+        <Categoria key={category.id} {...category} />
+      ))}
     </CategoriasContainer>
   );
 };
