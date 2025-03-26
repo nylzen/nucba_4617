@@ -35,6 +35,9 @@ importers:
       react-router-dom:
         specifier: ^6.15.0
         version: 6.30.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      redux-persist:
+        specifier: ^6.0.0
+        version: 6.0.0(react@18.3.1)(redux@4.2.1)
       styled-components:
         specifier: ^6.0.7
         version: 6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1153,6 +1156,15 @@ packages:
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
+
+  redux-persist@6.0.0:
+    resolution: {integrity: sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==}
+    peerDependencies:
+      react: '>=16'
+      redux: '>4.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
 
   redux-thunk@2.4.2:
     resolution: {integrity: sha512-+P3TjtnP0k/FEjcBL5FZpoovtvrTNT/UXd4/sluaSyrURlSlhLSzEdfsTBW7WsKB6yPvgd7q/iZPICFjW4o57Q==}
@@ -2597,6 +2609,12 @@ snapshots:
   react@18.3.1:
     dependencies:
       loose-envify: 1.4.0
+
+  redux-persist@6.0.0(react@18.3.1)(redux@4.2.1):
+    dependencies:
+      redux: 4.2.1
+    optionalDependencies:
+      react: 18.3.1
 
   redux-thunk@2.4.2(redux@4.2.1):
     dependencies:

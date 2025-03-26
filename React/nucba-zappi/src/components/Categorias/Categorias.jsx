@@ -1,11 +1,13 @@
 import { CategoriasContainer } from "./CategoriasStyles";
-import { categoriesMock } from "../../mock/categories";
 import Categoria from "./Categoria";
+import { useSelector } from "react-redux";
 
 const Categorias = () => {
+  const { categories } = useSelector((state) => state.categories);
+
   return (
     <CategoriasContainer>
-      {categoriesMock.map((category) => (
+      {categories.map((category) => (
         <Categoria key={category.id} {...category} />
       ))}
     </CategoriasContainer>

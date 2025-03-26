@@ -1,8 +1,10 @@
 import CardRecomendacion from "./CardRecomendacion";
 import { CardsContainer } from "./CardsRecomendacionStyled";
-import { recommended } from "../../mock/recommended";
+// import { recommended } from "../../mock/recommended";
+import { useSelector } from "react-redux";
 
 const CardsRecomendacion = () => {
+  const { recommended } = useSelector((state) => state.recommended);
 
   // ME TRAIGO EL VALOR DEL SETTINGS DEL USER PARA CUANTAS
   return (
