@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "formik": "^2.4.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.2"
+    "styled-components": "^6.0.2",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

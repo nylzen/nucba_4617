@@ -1,17 +1,32 @@
+import { ErrorMessage, Field } from "formik";
 import {
   ErrorStyled,
   InputBoxStyled,
   InputLabelStyled,
   InputStyled,
-} from './Input.styles';
+} from "./Input.styles";
 
-function Input({ label, type }) {
+function Input({ label, type, name, isError }) {
   return (
     <InputBoxStyled>
       <InputLabelStyled htmlFor={label}>{label}</InputLabelStyled>
-      <InputStyled type={type} id={label} />
+      {/* <InputStyled
+        type={type}
+        id={label}
+        name={name}
+        {...field}
+        error={isError}
+      /> */}
+      <Field
+        as={InputStyled}
+        type={type}
+        id={label}
+        name={name}
+        error={isError}
+      />
 
-      {false && <ErrorStyled>Este campo es obligatorio</ErrorStyled>}
+      {/* {isError && <ErrorStyled>{isError}</ErrorStyled>} */}
+      <ErrorMessage name={name} component={ErrorStyled} />
     </InputBoxStyled>
   );
 }

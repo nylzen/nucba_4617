@@ -1,7 +1,7 @@
-import { ButtonSubmitStyled } from './Submit.styles';
+import { ButtonSubmitStyled } from "./Submit.styles";
 
-function Submit() {
-  return <ButtonSubmitStyled type='submit'>Enviar</ButtonSubmitStyled>;
+function Submit({ children }) {
+  return <ButtonSubmitStyled type="submit">{children}</ButtonSubmitStyled>;
 }
 
 export default Submit;
