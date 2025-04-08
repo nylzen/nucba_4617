@@ -14,28 +14,38 @@ import {
   TextContainerStyled,
   TextStyled,
 } from "./ModalCartStyles";
+import { useDispatch } from "react-redux";
+import { addToCart, removeFromCart } from "../../../redux/slices/cart/cartSlice";
+import { IoMdTrash } from "react-icons/io";
 
-const ModalCartCard = () => {
+const ModalCartCard = ({ id, title, img, desc, price, quantity }) => {
+  const dispatch = useDispatch();
+
+  const handleIncrease = () => {
+    dispatch(addToCart({ id, title, img, desc, price }));
+  };
+
+  const handleRemoveFromCart = () => {
+    dispatch(removeFromCart(id))
+  }
+
   return (
     <ProductContainerStyled>
-      <img
-        src="https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648456/coding/NucbaZappi/Productos/muzza-mentolada_fmh9at.png"
-        alt="La Aco"
-      />
+      <img src={img} alt={title} />
       <TextContainerStyled>
-        <CardTitleStyled>La Aco</CardTitleStyled>
-        <TextStyled>Cheta la gorra</TextStyled>
-        <PriceStyled>{formatPrice(3000)}</PriceStyled>
+        <CardTitleStyled>{title}</CardTitleStyled>
+        <TextStyled>{desc}</TextStyled>
+        <PriceStyled>{formatPrice(price)}</PriceStyled>
       </TextContainerStyled>
       <QuantityContainerStyled>
         <Increase
           bgColor="var(--btn-gradient-secondary)"
-          onClick={(e) => e.preventDefault()}
+          onClick={handleRemoveFromCart}
         >
-          <FaMinus />
+          {quantity === 1 ? <IoMdTrash /> : <FaMinus />}
         </Increase>
-        <Count>3</Count>
-        <Increase onClick={(e) => e.preventDefault()}>
+        <Count>{quantity}</Count>
+        <Increase onClick={handleIncrease}>
           <BsPlusLg />
         </Increase>
       </QuantityContainerStyled>

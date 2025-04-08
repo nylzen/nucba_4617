@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux";
 import { formatPrice } from "../../utils/index";
 
 import Button from "../UI/Button/Button";
@@ -7,19 +8,26 @@ import {
   ContainerPrice,
   ProductosCard,
 } from "./CardsProductosStyles";
+import { addToCart, toggleHiddenCart } from "../../redux/slices/cart/cartSlice";
+import { toast } from "sonner";
 
-const CardProducto = ({title, img, desc, price}) => {
+const CardProducto = ({ title, img, desc, price, id }) => {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart({ id, title, img, desc, price }));
+    dispatch(toggleHiddenCart());
+    toast.success("Producto agregado al carrito");
+  };
+
   return (
     <ProductosCard>
-      <img
-        src={img}
-        alt={title}
-      />
+      <img src={img} alt={title} />
       <h2>{title}</h2>
       <p>{desc}</p>
       <ContainerPrice>
         <CardPrice>{formatPrice(price)}</CardPrice>
-        <Button onClick={(e) => e.preventDefault()}>Agregar</Button>
+        <Button onClick={handleAddToCart}>Agregar</Button>
       </ContainerPrice>
     </ProductosCard>
   );

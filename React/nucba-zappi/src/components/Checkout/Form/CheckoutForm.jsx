@@ -2,17 +2,44 @@ import Input from "../../UI/Input/Input";
 import Submit from "../../UI/Submit/Submit";
 
 import { CheckoutDatosStyled, Form, Formik } from "./CheckoutFormStyles";
+import { checkoutInitialValues } from "./formik/initial-values";
+import { checkoutValidationSchema } from "./formik/validation-schema";
 
-const CheckoutForm = () => {
+// Formik dentro Form dentro Field con su ErrorMessage
+// Que necesita formik para poder funcionar?
+// 1. initialValues
+// 2. validationSchema
+// 3. onSubmit
+
+const CheckoutForm = ({ cartItems, totalPrice, shippingCost }) => {
+
+
   return (
     <CheckoutDatosStyled>
       <h2>Ingresá tus datos</h2>
-      <Formik>
+      <Formik
+        initialValues={checkoutInitialValues}
+        validationSchema={checkoutValidationSchema}
+        onSubmit={(values) => {
+          const dataForCheckout = {
+            name: values.name,
+            phone: values.phone,
+            location: values.location,
+            address: values.address,
+            items: cartItems,
+            shippingCost: shippingCost,
+            totalPrice: totalPrice,
+          }
+
+          console.log(dataForCheckout)
+        }}
+      >
         <Form>
           <Input
             htmlFor="nombre"
             type="text"
             id="nombre"
+            name="name"
             placeholder="Tu nombre"
           >
             Nombre
@@ -21,6 +48,7 @@ const CheckoutForm = () => {
             htmlFor="celular"
             type="text"
             id="celular"
+            name="phone"
             placeholder="Tu celular"
           >
             Celular
@@ -29,6 +57,7 @@ const CheckoutForm = () => {
             htmlFor="localidad"
             type="text"
             id="localidad"
+            name="location"
             placeholder="Tu localidad"
           >
             Localidad
@@ -36,13 +65,14 @@ const CheckoutForm = () => {
           <Input
             htmlFor="direccion"
             type="text"
-            id="dirección"
+            id="direccion"
+            name="address"
             placeholder="Tu dirección"
           >
             Dirección
           </Input>
           <div>
-            <Submit disabled="true">Iniciar Pedido</Submit>
+            <Submit disabled={!cartItems.length}>Iniciar Pedido</Submit>
           </div>
         </Form>
       </Formik>
