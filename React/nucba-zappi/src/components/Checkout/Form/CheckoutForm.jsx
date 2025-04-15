@@ -1,9 +1,15 @@
+import { toast } from "sonner";
+import { useOrders } from "../../../pages/Checkout/hooks/useOrders";
 import Input from "../../UI/Input/Input";
 import Submit from "../../UI/Submit/Submit";
+import Loader from "../../UI/Loader/Loader";
 
 import { CheckoutDatosStyled, Form, Formik } from "./CheckoutFormStyles";
 import { checkoutInitialValues } from "./formik/initial-values";
 import { checkoutValidationSchema } from "./formik/validation-schema";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../../../redux/slices/cart/cartSlice";
 
 // Formik dentro Form dentro Field con su ErrorMessage
 // Que necesita formik para poder funcionar?
@@ -12,7 +18,9 @@ import { checkoutValidationSchema } from "./formik/validation-schema";
 // 3. onSubmit
 
 const CheckoutForm = ({ cartItems, totalPrice, shippingCost }) => {
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { createOrder, isLoading } = useOrders();
 
   return (
     <CheckoutDatosStyled>
@@ -20,18 +28,22 @@ const CheckoutForm = ({ cartItems, totalPrice, shippingCost }) => {
       <Formik
         initialValues={checkoutInitialValues}
         validationSchema={checkoutValidationSchema}
-        onSubmit={(values) => {
-          const dataForCheckout = {
-            name: values.name,
-            phone: values.phone,
-            location: values.location,
-            address: values.address,
+        onSubmit={async (values) => {
+          const orderData = {
             items: cartItems,
+            price: totalPrice,
             shippingCost: shippingCost,
-            totalPrice: totalPrice,
+            total: totalPrice + shippingCost,
+            shippingDetails: { ...values },
+          };
+          try {
+            await createOrder(orderData);
+            toast.success("Orden creada correctamente");
+            dispatch(clearCart());
+            navigate("/felicitaciones");
+          } catch (error) {
+            console.log(error);
           }
-
-          console.log(dataForCheckout)
         }}
       >
         <Form>
@@ -48,7 +60,7 @@ const CheckoutForm = ({ cartItems, totalPrice, shippingCost }) => {
             htmlFor="celular"
             type="text"
             id="celular"
-            name="phone"
+            name="cellphone"
             placeholder="Tu celular"
           >
             Celular
@@ -72,7 +84,9 @@ const CheckoutForm = ({ cartItems, totalPrice, shippingCost }) => {
             Dirección
           </Input>
           <div>
-            <Submit disabled={!cartItems.length}>Iniciar Pedido</Submit>
+            <Submit disabled={!cartItems.length || isLoading}>
+              {isLoading ? <Loader /> : "Iniciar Pedido"}
+            </Submit>
           </div>
         </Form>
       </Formik>

@@ -8,6 +8,7 @@ import {
   categoriesReducer,
   cartReducer,
   userReducer,
+  ordersReducer,
 } from "./slices";
 
 const reducers = combineReducers({
@@ -16,12 +17,13 @@ const reducers = combineReducers({
   categories: categoriesReducer,
   cart: cartReducer,
   user: userReducer,
+  orders: ordersReducer,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["cart", "user"],
+  whitelist: ["cart", "user", "orders"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

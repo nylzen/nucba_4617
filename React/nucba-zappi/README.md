@@ -21,3 +21,13 @@
   - ir login aplicar formik / mismo register
 - Detalles de UI
   - Navbar, redirecciones etc etc
+
+
+# Ordenes
+
+- Configurar redux para las ordenes
+  - Crear ordenes / obtener ordenes
+- Implementar la api con las ordenes tanto el get como el post
+- Hacer funcional el form del checkout para mandar la datita
+- Implementar pagina de mis ordenes, donde vamos a mostrar la lista de todas las ordenes/pedidos que hizo el user
+- Pagina del resumen de la orden, donde vamos a mostrar unicamente ese pedidoo

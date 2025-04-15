@@ -7,13 +7,17 @@ import {
   UsernameStyled,
 } from "./ModelUserStyles";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleHiddenMenu } from "../../../redux/slices/user/userSlice";
+import {
+  setCurrentUser,
+  toggleHiddenMenu,
+} from "../../../redux/slices/user/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const ModalUser = () => {
   // const [hiddenMenu, setHiddenMenu] = useState(true);
   const { hiddenMenu } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   return (
     <AnimatePresence>
       {!hiddenMenu && (
@@ -27,7 +31,14 @@ const ModalUser = () => {
           <UsernameStyled>Pepito</UsernameStyled>
           <HrStyled />
           <LinkStyled to="/mis-ordenes">Mis Ordenes</LinkStyled>
-          <span onClick={() => dispatch(toggleHiddenMenu())}>
+          <span
+            onClick={() => {
+              dispatch(toggleHiddenMenu());
+              dispatch(setCurrentUser(null));
+              localStorage.clear();
+              navigate("/");
+            }}
+          >
             Cerrar Sesion
           </span>
         </ModalContainerStyled>

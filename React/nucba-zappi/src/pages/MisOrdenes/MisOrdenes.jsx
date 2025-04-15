@@ -9,9 +9,22 @@ import {
   MisOrdenesPatternStyled,
   MisOrdenesTitleStyled,
 } from "./MisOrdenesStyles";
+import { useSelector } from "react-redux";
+import { useOrders } from "../Checkout/hooks/useOrders";
+import { useEffect } from "react";
 
 const MisOrdenes = () => {
   const navigate = useNavigate();
+
+  const { orders } = useSelector((state) => state.orders);
+
+  const { getOrders } = useOrders();
+
+  useEffect(() => {
+    if (!orders) {
+      getOrders();
+    }
+  }, [orders, getOrders]);
 
   return (
     <>

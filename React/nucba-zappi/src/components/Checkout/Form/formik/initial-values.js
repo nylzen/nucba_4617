@@ -1,6 +1,6 @@
 export const checkoutInitialValues = {
   name: "",
-  phone: "",
+  cellphone: "",
   location: "",
   address: "",
 };
